@@ -8,7 +8,17 @@ body {
     color: #4f4343;
     background: linear-gradient(to right, #f0f4fd, #d1e2fa);
     box-shadow: 3px 3px 8px rgb(0, 0, 0, 0.1);
+    scroll-behavior: smooth;
 
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 header {
@@ -16,19 +26,14 @@ header {
     color: #f4f4f4;
     padding: 20px 0;
     text-align: center;
-    position: static;
-    top: 0;
-    z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    perspective: 1000px;
+   
 
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    transform: rotateY(15deg);
-    perspective: 500px;
     color: #ffeb3b;
     text-shadow: 2px 4px #000;
 }
@@ -36,8 +41,6 @@ header h1 {
 header p {
     font-size: 1.2rem;
     margin: 10px 0 0;
-    transform: rotateY(15deg);
-    perspective: 500px;
     text-shadow:2px 1px 4px #000;
 }
 
@@ -75,11 +78,12 @@ header nav ul li a:hover {
     overflow: hidden;
 }
 
+/* about section */
+
 #about {
-    background: linear-gradient(135deg, #fff, #e0e0e0);
+    background: linear-gradient(135deg, #f0f0f0, #c4c4c4);
     padding: 50px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 } 
 
 
@@ -87,36 +91,36 @@ header nav ul li a:hover {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #333;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-#about .about-content {
+.about-content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 3rem;
 }
 
-#about  img {
-    width: 160px;
+.about-content img {
+    width: 200px;
     height: auto;
-    transition: transform 1s, box-shadow 1s;
-    transform-style: preserve-3d;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    border: 5px solid #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s, box-shadow 0.5s;
 }
 
-#about img:hover {
-    transform: rotateY(360deg);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+.about-content img:hover {
+    transform: rotateY(180deg) scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+
 }
 
-#about p {
+.about-content p {
     max-width: 600px;
     font-size: 1.2em;
     color: #555;
+    margin-top: 20px;
+    line-height: 1.6;
 }
 
 /* skills section */
@@ -163,6 +167,7 @@ header nav ul li a:hover {
 .skill i:hover{ 
     transform: rotate(360deg);
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -224,7 +229,6 @@ a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s, box-shadow 0.5s;
-    transform-style:preserve-3d;
 
 }
 
@@ -239,7 +243,6 @@ a:hover {
     height: auto;
     border-radius: 10px 10px 0 0;
     transition: transform 0.5s;
-    transform-style: preserve-3d;
 }
 
 .project:hover img {
@@ -263,7 +266,7 @@ a:hover {
 }
 
 #services h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
@@ -315,27 +318,50 @@ a:hover {
 }
 
 /* testimonals section */
-.testimonials-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.testimonial {
-    width: 45%;
-    margin: 20px 0;
+#testimonials {
+    background: linear-gradient(135deg, #ffcccc, #ffb6b9);
+    padding: 50px 0;
     text-align: center;
 }
 
+#testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.testimonials-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.testimonial {
+    width: 300px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s, box-shadow 0.5s;
+    transform-style: preserve-3d;
+}
+
+.testimonial:hover{
+    transform: rotateY(10deg) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
 .testimonial p{
-    font-style: italic;
-    color: #666;
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
 }
 
 .testimonial h4 {
-    margin-top: 10px;
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #333;
+    margin-bottom: 5px;
 }
 
 /* resume section */
